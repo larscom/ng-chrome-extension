@@ -9,7 +9,7 @@ import { LogService } from './log.service';
 import { SpinnerService } from './spinner.service';
 
 const deleteFiles = ['README.md'];
-const deleteDirs = ['.vscode', '.git', 'cli'];
+const deleteDirs = ['.vscode', '.git'];
 
 const jsonFormat = { spaces: 2 };
 const getProjectDir = (name: string) => `${process.cwd()}/${name}`;
@@ -43,7 +43,7 @@ export class ProjectService {
   ) {}
 
   /**
-   * Clone https://github.com/larscom/ng-chrome-extension
+   * Clone https://github.com/larscom/angular-chrome-extension
    * and clean up specific files and folders
    */
   async create(projectName: string, chosenFeatures: Feature[]): Promise<void> {
@@ -55,7 +55,7 @@ export class ProjectService {
     try {
       this.spinner.start('creating new extension...');
 
-      await git.clone(repository.url, cloneDir);
+      await git.clone(repository.template_url, cloneDir);
       await this.cleanDir(cloneDir, featuresToRemove);
       await this.writePackageJson(cloneDir, projectName);
       await this.writeManifestJson(cloneDir, projectName, chosenFeatures);

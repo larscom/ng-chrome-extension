@@ -26,7 +26,7 @@ npm install -g @larscom/ng-chrome-extension
 ng-chrome
 ```
 
-![alt text](https://snipboard.io/2eBxET.jpg 'ng-chrome CLI')
+![alt text](https://snipboard.io/OYcNzx.jpg 'ng-chrome CLI')
 
 ## How to use/develop
 
