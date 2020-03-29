@@ -21,9 +21,11 @@ jobs:
         run: npm run build:production
       - name: unit test
         run: npm run test
-      - if: startsWith(github.ref, 'refs/tags/v')
+      - name: prepare artifact
+        if: startsWith(github.ref, 'refs/tags/v')
         run: rsync -av --progress . dist --exclude node_modules --exclude dist --exclude .github --exclude src
-        name: upload artifact
+      - name: upload artifact
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@master
         with:
           name: dist
