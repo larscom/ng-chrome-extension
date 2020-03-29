@@ -9,7 +9,7 @@ import { LogService } from './log.service';
 import { SpinnerService } from './spinner.service';
 
 const deleteFiles = ['README.md'];
-const deleteDirs = ['.vscode', '.git'];
+const deleteDirs = ['.git'];
 
 const jsonFormat = { spaces: 2 };
 const getProjectDir = (name: string) => `${process.cwd()}/${name}`;
