@@ -9,7 +9,7 @@ const main = (args: string[]) => {
   const argument = [...args].shift();
 
   if (requestVersion(String(argument))) {
-    const { version } = require('./package');
+    const { version } = require('../package.json');
     console.log(version);
     exit(0);
   }
