@@ -1,0 +1,27 @@
+name: '@larscom/ng-chrome-extension'
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - '*'
+      - '!master'
+      - '!v*.'
+      - '!*.*.*'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout source
+        uses: actions/checkout@v2
+      - name: setup node 10 environment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+      - name: install
+        run: npm ci --ignore-scripts
+      - name: build
+        run: npm run build:production
+      - name: unit test
+        run: npm run test

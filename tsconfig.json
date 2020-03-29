@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["es6", "es2018", "dom"],
+    "declaration": false,
+    "experimentalDecorators": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "sourceMap": true,
+    "types": ["node", "inquirer", "figlet", "fs-extra", "reflect-metadata"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "importHelpers": true
+  },
+  "include": ["src"],
+  "exclude": ["**/node_modules/**", "**/lib/**"]
+}
