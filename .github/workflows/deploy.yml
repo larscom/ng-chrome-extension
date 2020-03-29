@@ -23,7 +23,7 @@ jobs:
         run: npm run test
       - name: prepare artifact
         if: startsWith(github.ref, 'refs/tags/v')
-        run: rsync -av --progress . dist --exclude node_modules --exclude dist --exclude .github --exclude src
+        run: rsync -av --progress . dist --exclude node_modules --exclude dist --exclude .github --exclude .git --exclude src
       - name: upload artifact
         if: startsWith(github.ref, 'refs/tags/v')
         uses: actions/upload-artifact@master
@@ -47,6 +47,8 @@ jobs:
         with:
           name: dist
       - name: npm publish
-        run: npm publish
+        run: |
+          cd dist
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

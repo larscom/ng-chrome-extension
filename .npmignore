@@ -2,6 +2,7 @@ src/
 test/
 node_modules/
 .gitignore
+.git/
 tsconfig.json
 lib/**/*.map
-.github
+.github/
