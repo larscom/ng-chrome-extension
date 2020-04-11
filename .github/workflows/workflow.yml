@@ -6,7 +6,7 @@ on:
     tags:
       - 'v*.*.*'
 jobs:
-  ci:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: checkout source
@@ -31,7 +31,7 @@ jobs:
           name: dist
           path: dist
   npm:
-    needs: ci
+    needs: build
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
