@@ -51,6 +51,13 @@ The project is automatically being watched, any changes to the files will recomp
 
 This will run a production build and will automatically zip it as a extension package in the root folder named: `extension-build.zip`
 
+## Debugging
+Run: `npm start`
+
+Go to: Developer tools (inspect popup) => Sources => webpack
+
+You can find your source files (TypeScript) over there.
+
 ## Angular folder
 
 This folder contains the angular source code.
