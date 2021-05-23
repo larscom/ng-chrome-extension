@@ -12,7 +12,7 @@ The following scenarios/options are supported:
 - Popup &#10003;
 - New Tab &#10003;
 - Options &#10003;
-- Background Page &#10003;
+- Service Worker &#10003;
 - Content Page &#10003;
 
 ## How to install
@@ -38,7 +38,7 @@ ng-chrome
 
 The project is automatically being watched, any changes to the files will recompile the project.
 
-**NOTE**: changes to the **content page** and **background page** scripts requires you to reload the extension in `chrome://extensions`
+**NOTE**: changes to the **content page** and **service worker** scripts requires you to reload the extension in `chrome://extensions`
 
 ![alt text](https://snipboard.io/KToCI3.jpg 'Angular Chrome Popup')
 ![alt text](https://snipboard.io/VYfGoD.jpg 'Angular Chrome Tab')
@@ -67,4 +67,4 @@ see: `./angular/src/app/modules`
 
 ## Chrome folder
 
-This folder contains the content page/background page scripts.
+This folder contains the content page/service worker scripts.
