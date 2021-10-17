@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/npm/l/@larscom/ng-chrome-extension)](https://github.com/larscom/ng-chrome-extension/blob/master/LICENSE)
 ![npm](https://img.shields.io/npm/dw/@larscom/ng-chrome-extension)
 
-Easily create Google Chrome Extensions (v3) using the `latest` version of Angular.
+Easily create `Angular (~12.2.0)` Chrome Extensions (manifest v3)
 
 The following scenarios/options are supported:
 
