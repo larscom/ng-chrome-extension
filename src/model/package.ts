@@ -8,5 +8,5 @@ export interface Package {
 export interface PackageRepository {
   type: string;
   url: string;
-  template_url: string;
+  zip_url: string;
 }
