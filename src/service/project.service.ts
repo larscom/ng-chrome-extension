@@ -186,6 +186,10 @@ export class ProjectService {
     const entries = zip.getEntries();
     for (const entry of entries) {
       const path = `${projectDir}/${entry.entryName.replace('angular-chrome-extension-master/', '')}`;
+      if (path.includes('..')) {
+        throw Error(`Unexpected path: ${path}`);
+      }
+
       if (entry.isDirectory) {
         fs.mkdirpSync(path);
       } else {
