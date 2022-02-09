@@ -1,7 +1,7 @@
 import clear from 'clear';
 import figlet from 'figlet';
 import { inject as Inject, injectable as Injectable } from 'inversify';
-import { cyan, red, yellow, bold } from 'kleur';
+import { cyan, red, yellow, bold, green } from 'kleur';
 import { Package } from '../model/package';
 
 @Injectable()
@@ -24,7 +24,7 @@ export class LogService {
     clear({ fullClear: true });
 
     console.log(red(figlet.textSync(this.pkg.shortName, { horizontalLayout: 'full' })));
-    console.log(yellow(`More info: ${cyan('https://github.com/larscom/ng-chrome-extension')}`));
+    console.log(green(this.pkg.version));
     console.log('---------------------------------------------------------------');
     console.info('Generating a new chrome extension...');
     console.log();

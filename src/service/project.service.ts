@@ -3,6 +3,7 @@ import axios from 'axios';
 import { exec } from 'child_process';
 import fs from 'fs-extra';
 import { inject as Inject, injectable as Injectable } from 'inversify';
+import path from 'path';
 import ts from 'typescript';
 import { Feature } from '../model/feature';
 import { Package } from '../model/package';
@@ -10,10 +11,9 @@ import { LogService } from './log.service';
 import { SpinnerService } from './spinner.service';
 
 const deleteFiles = ['README.md'];
-
 const jsonFormat = { spaces: 2 };
 
-const getProjectDir = (name: string) => `${process.cwd()}/${name}`;
+const getProjectDir = (name: string): string => path.join(process.cwd(), name);
 
 const projectNameMatch = new RegExp(/^[a-z0-9-_]+$/);
 
