@@ -180,7 +180,10 @@ export class ProjectService {
   }
 
   private async downloadAndUnzip(projectDir: string, url: string): Promise<void> {
-    await fs.mkdirp(projectDir);
+    await /* TODO: JSFIX could not patch the breaking change:
+    Creating a directory with fs-extra no longer returns the path 
+    Suggested fix: The returned promise no longer includes the path of the new directory */
+    fs.mkdirp(projectDir);
     const zip = new admZip(await this.getZipBuffer(url));
 
     const entries = zip.getEntries();
