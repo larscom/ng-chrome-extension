@@ -58,6 +58,12 @@ Go to: Developer tools (inspect popup) => Sources => webpack
 
 You can find your source files (TypeScript) over there.
 
+## Upgrade Angular
+After you have created a new project with `ng-chrome` and you want to update angular. 
+
+Just follow the regular upgrade guide of angular. See: https://update.angular.io/
+
+
 ## Angular folder
 
 This folder contains the angular source code.
@@ -68,3 +74,4 @@ see: `./angular/src/app/modules`
 ## Chrome folder
 
 This folder contains the content page/service worker scripts.
+
