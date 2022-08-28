@@ -61,7 +61,7 @@ export class ProjectService {
     try {
       this.spinner.start('installing dependencies...');
 
-      await this.execAsync('npm ci');
+      await this.execAsync('npm ci --legacy-peer-deps');
 
       this.spinner.stop('done! installed dependencies');
     } catch (e) {
