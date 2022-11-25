@@ -1,0 +1,23 @@
+name: feature
+
+'on':
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: Install
+        run: npm ci --ignore-scripts --legacy-peer-deps
+      - name: Build
+        run: npm run build:production
+
+

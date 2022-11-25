@@ -1,11 +1,13 @@
 # @larscom/ng-chrome-extension
 
 [![npm-release](https://img.shields.io/npm/v/@larscom/ng-chrome-extension.svg?label=npm)](https://www.npmjs.com/package/@larscom/ng-chrome-extension)
-[![@larscom/ng-chrome-extension](https://github.com/larscom/ng-chrome-extension/workflows/@larscom/ng-chrome-extension/badge.svg?branch=master)](https://github.com/larscom/ng-chrome-extension)
 [![license](https://img.shields.io/npm/l/@larscom/ng-chrome-extension)](https://github.com/larscom/ng-chrome-extension/blob/master/LICENSE)
 ![npm](https://img.shields.io/npm/dt/@larscom/ng-chrome-extension)
 
-Easily create `Angular` Chrome Extensions (manifest v3)
+[![master](https://github.com/larscom/ng-chrome-extension/actions/workflows/master-build.yml/badge.svg?branch=master)](https://github.com/larscom/ng-chrome-extension/actions/workflows/master-build.yml)
+[![CodeQL](https://github.com/larscom/ng-chrome-extension/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-chrome-extension/actions/workflows/codeql-analysis.yml)
+
+> Easily create `Angular` Chrome Extensions (manifest v3)
 
 The following scenarios/options are supported:
 

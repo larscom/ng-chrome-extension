@@ -4,5 +4,6 @@ node_modules/
 .gitignore
 .git/
 tsconfig.json
-lib/**/*.map
+package-lock.json
+**/**/*.map
 .github/

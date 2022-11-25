@@ -23,8 +23,7 @@
     "build": "tsc -p .",
     "build:production": "npm run clean && npm run build",
     "start": "npm run build -- --watch",
-    "clean": "rimraf lib",
-    "test": "exit 0"
+    "clean": "rimraf dist"
   },
   "keywords": [
     "ng-chrome",

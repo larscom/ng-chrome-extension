@@ -6,7 +6,7 @@
     "lib": ["es2020", "dom"],
     "declaration": false,
     "experimentalDecorators": true,
-    "outDir": "lib",
+    "outDir": "dist",
     "rootDir": "src",
     "strict": true,
     "sourceMap": false,
@@ -16,5 +16,5 @@
     "importHelpers": true
   },
   "include": ["src"],
-  "exclude": ["**/node_modules/**", "**/lib/**"]
+  "exclude": ["**/node_modules/**", "**/dist/**"]
 }
