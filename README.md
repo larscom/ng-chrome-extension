@@ -24,7 +24,7 @@ npm install -g @larscom/ng-chrome-extension
 ## Start creating a new project
 
 ```bash
-ng-chrome
+ng-chrome new
 ```
 
 ![alt text](https://snipboard.io/OYcNzx.jpg 'ng-chrome CLI')
