@@ -4,16 +4,14 @@
 [![license](https://img.shields.io/npm/l/@larscom/ng-chrome-extension)](https://github.com/larscom/ng-chrome-extension/blob/master/LICENSE)
 ![npm](https://img.shields.io/npm/dt/@larscom/ng-chrome-extension)
 
-[![master](https://github.com/larscom/ng-chrome-extension/actions/workflows/master-build.yml/badge.svg?branch=master)](https://github.com/larscom/ng-chrome-extension/actions/workflows/master-build.yml)
-[![CodeQL](https://github.com/larscom/ng-chrome-extension/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/larscom/ng-chrome-extension/actions/workflows/codeql-analysis.yml)
-
 > Easily create `Angular` Chrome Extensions (manifest v3)
 
-The following scenarios/options are supported:
+The following scenarios are supported:
 
 - Popup &#10003;
 - New Tab &#10003;
 - Options &#10003;
+- Side Panel &#10003;
 - Service Worker &#10003;
 - Content Page &#10003;
 
@@ -54,6 +52,7 @@ The project is automatically being watched, any changes to the files will recomp
 This will run a production build and will automatically zip it as a extension package in the root folder named: `extension-build.zip`
 
 ## Debugging
+
 Run: `npm start`
 
 Go to: Developer tools (inspect popup) => Sources => webpack
@@ -61,19 +60,18 @@ Go to: Developer tools (inspect popup) => Sources => webpack
 You can find your source files (TypeScript) over there.
 
 ## Upgrade Angular
-After you have created a new project with `ng-chrome` and you want to update angular. 
+
+After you have created a new project with `ng-chrome` and you want to update angular.
 
 Just follow the regular upgrade guide of angular. See: https://update.angular.io/
-
 
 ## Angular folder
 
 This folder contains the angular source code.
-Each feature (popup,options,tab) lives inside its own module and gets lazily loaded.
+Each feature (popup,options,tab,side-panel) lives inside its own standalone component and gets lazily loaded.
 
 see: `./angular/src/app/modules`
 
 ## Chrome folder
 
 This folder contains the content page/service worker scripts.
-

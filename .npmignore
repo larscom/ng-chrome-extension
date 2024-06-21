@@ -1,9 +1,0 @@
-src/
-test/
-node_modules/
-.gitignore
-.git/
-tsconfig.json
-package-lock.json
-**/**/*.map
-.github/
