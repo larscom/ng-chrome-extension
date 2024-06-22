@@ -1,7 +1,7 @@
 {
   "name": "@larscom/ng-chrome-extension",
   "shortName": "ng-chrome",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "CLI to generate angular chrome extensions",
   "main": "./bin/main.js",
   "type": "module",
