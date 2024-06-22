@@ -68,6 +68,7 @@ async function installDepsAsync(name) {
     spinner.start('Installing dependencies...')
 
     await execAsync('npm ci --legacy-peer-deps')
+    await execAsync('(cd chrome && npm ci --legacy-peer-deps)')
 
     spinner.stop('Successfully installed dependencies')
   } catch (e) {
