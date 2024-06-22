@@ -1,7 +1,6 @@
 # @larscom/ng-chrome-extension
 
 [![npm-release](https://img.shields.io/npm/v/@larscom/ng-chrome-extension.svg?label=npm)](https://www.npmjs.com/package/@larscom/ng-chrome-extension)
-[![license](https://img.shields.io/npm/l/@larscom/ng-chrome-extension)](https://github.com/larscom/ng-chrome-extension/blob/master/LICENSE)
 ![npm](https://img.shields.io/npm/dt/@larscom/ng-chrome-extension)
 
 > Easily create `Angular` Chrome Extensions (manifest v3)
@@ -14,6 +13,10 @@ The following scenarios are supported:
 - Side Panel &#10003;
 - Service Worker &#10003;
 - Content Page &#10003;
+
+## Disclaimer
+
+This CLI tool should work on Linux/macOS, it is not tested on Windows.
 
 ## How to install
 
@@ -74,4 +77,4 @@ see: `./angular/src/app/modules`
 
 ## Chrome folder
 
-This folder contains the content page/service worker scripts.
+This folder contains the content page/service worker scripts and has its own `package.json` to manage it's dependencies.
