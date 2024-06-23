@@ -17,12 +17,13 @@ jobs:
       TZ: Europe/Amsterdam
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
+      - uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
       - run: |
-          bun install --frozen-lockfile
-          bun run build
+          npm ci --ignore-scripts --legacy-peer-deps
+          npm run build
 
   publish:
     if: startsWith(github.ref, 'refs/tags/')
@@ -32,22 +33,21 @@ jobs:
       TZ: Europe/Amsterdam
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
+      - uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: |
           version=${{ github.ref_name }}
           sed -i "s/{{PLACEHOLDER_VERSION}}/${version}/" ./src/version.ts
           cat ./src/version.ts
       - run: |
-          bun install --frozen-lockfile
-          bun run build
+          npm ci --ignore-scripts --legacy-peer-deps
+          npm run build
       - run: |
           cp README.md ./dist
           cp LICENSE ./dist
           cp package.json ./dist
-
-          cd dist
-
-          npm set //registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}
-          npm publish
+          cd dist && npm publish
