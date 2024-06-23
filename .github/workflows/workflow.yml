@@ -35,8 +35,6 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: |
           version=${{ github.ref_name }}
           sed -i "s/{{PLACEHOLDER_VERSION}}/${version}/" ./src/version.ts
@@ -48,4 +46,8 @@ jobs:
           cp README.md ./dist
           cp LICENSE ./dist
           cp package.json ./dist
-          cd dist && npx npm publish
+
+          cd dist
+
+          npm set //registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}
+          npm publish
