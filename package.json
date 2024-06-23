@@ -4,7 +4,6 @@
   "version": "3.2.0",
   "description": "CLI to generate angular chrome extensions",
   "main": "./bin/main.js",
-  "module": "./src/main.ts",
   "type": "module",
   "bin": {
     "ng-chrome": "bin/main.js"
