@@ -4,6 +4,7 @@
   "version": "3.1.1",
   "description": "CLI to generate angular chrome extensions",
   "main": "./bin/main.js",
+  "module": "./src/main.ts",
   "type": "module",
   "bin": {
     "ng-chrome": "bin/main.js"
@@ -20,8 +21,9 @@
   },
   "homepage": "https://github.com/larscom/ng-chrome-extension#readme",
   "scripts": {
-    "build": "rollup -c",
-    "start": "node ./src/main.js"
+    "start": "bun ./src/main.ts",
+    "watch": "bun --watch ./src/main.ts",
+    "build": "bun build --target=node ./src/main.ts --outfile=./dist/bin/main.js"
   },
   "keywords": [
     "ng-chrome",
@@ -47,10 +49,14 @@
     "ora": "^8.0.1"
   },
   "devDependencies": {
+    "@types/bun": "latest",
+    "@types/adm-zip": "^0.5.5",
+    "@types/clear": "^0.1.4",
+    "@types/figlet": "^1.5.8",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.14.8",
     "rimraf": "^5.0.7",
-    "rollup": "^4.18.0",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3"
+    "typescript": "^5.5.2"
   }
 }

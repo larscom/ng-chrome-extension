@@ -16,14 +16,13 @@ jobs:
     env:
       TZ: Europe/Amsterdam
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          bun-version: latest
       - run: |
-          npm ci --ignore-scripts --legacy-peer-deps
-          npm run build
+          bun install --frozen-lockfile
+          bun run build
 
   publish:
     if: startsWith(github.ref, 'refs/tags/')
@@ -32,22 +31,21 @@ jobs:
     env:
       TZ: Europe/Amsterdam
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org/
+          bun-version: latest
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          BUN_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: |
           version=${{ github.ref_name }}
-          sed -i "s/{{PLACEHOLDER_VERSION}}/${version}/" ./src/constants.js
-          cat ./src/constants.js
+          sed -i "s/{{PLACEHOLDER_VERSION}}/${version}/" ./src/version.ts
+          cat ./src/version.ts
       - run: |
-          npm ci --ignore-scripts --legacy-peer-deps
-          npm run build
+          bun install --frozen-lockfile
+          bun run build
       - run: |
           cp README.md ./dist
           cp LICENSE ./dist
           cp package.json ./dist
-          cd dist && npm publish
+          cd dist && bun publish
