@@ -36,7 +36,7 @@ jobs:
         with:
           bun-version: latest
         env:
-          BUN_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
       - run: |
           version=${{ github.ref_name }}
           sed -i "s/{{PLACEHOLDER_VERSION}}/${version}/" ./src/version.ts
@@ -48,4 +48,4 @@ jobs:
           cp README.md ./dist
           cp LICENSE ./dist
           cp package.json ./dist
-          cd dist && bun publish
+          cd dist && npx npm publish
