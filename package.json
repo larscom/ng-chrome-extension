@@ -42,7 +42,7 @@
     "commander": "^12.1.0",
     "figlet": "^1.7.0",
     "fs-extra": "^11.2.0",
-    "inquirer": "^9.2.23",
+    "inquirer": "^12.9.4",
     "kleur": "^4.1.5",
     "ora": "^8.0.1"
   },
